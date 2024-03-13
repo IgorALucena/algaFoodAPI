@@ -1,7 +1,5 @@
 package com.algaworks.algafood.jpa;
 
-import java.util.List;
-
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
@@ -9,16 +7,19 @@ import org.springframework.context.ApplicationContext;
 import com.algaworks.algafood.AlgafoodApiApplication;
 import com.algaworks.algafood.domain.model.Cozinha;
 
-public class ConsultaCozinhaMain {
+public class InclusaoCozinha {
 
 	public static void main(String[] args) {
 		ApplicationContext applicationContext = new SpringApplicationBuilder(AlgafoodApiApplication.class).web(WebApplicationType.NONE).run(args);
 
 		CadastroCozinhaMain cadastroCozinha = applicationContext.getBean(CadastroCozinhaMain.class);
 		
-		List<Cozinha> cozinhas = cadastroCozinha.listar();
+		Cozinha cozinha1 = new Cozinha();
 		
-		cozinhas.forEach(x -> System.out.println(x.getNome()));
+		cozinha1.setNome("brasileira");
+		
+		
+		cozinha1 = cadastroCozinha.adicionar(cozinha1);
 		
 	}
 
