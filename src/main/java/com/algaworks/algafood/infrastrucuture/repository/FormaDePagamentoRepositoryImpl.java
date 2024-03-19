@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
@@ -22,11 +23,13 @@ public class FormaDePagamentoRepositoryImpl implements FormaDePagamentoRepositor
 		return manager.createQuery("from formaDePagamento", FormaDePagamento.class).getResultList();
 	}
 
+	@Transactional
 	@Override
 	public FormaDePagamento salvar(FormaDePagamento formaDePagamento) {
 		return manager.merge(formaDePagamento);
 	}
 
+	@Transactional
 	@Override
 	public void remover(FormaDePagamento formaDePagamento) {
 		FormaDePagamento busca = buscar(formaDePagamento.getId());

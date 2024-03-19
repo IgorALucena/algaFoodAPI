@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import com.algaworks.algafood.domain.model.Estado;
 import com.algaworks.algafood.domain.repository.EstadoRepository;
@@ -18,6 +19,7 @@ public class EstadoRepositoryImpl implements EstadoRepository {
 		return manager.createQuery("from estado", Estado.class).getResultList();
 	}
 
+	@Transactional
 	@Override
 	public Estado salvar(Estado estado) {
 		return manager.merge(estado);
@@ -28,6 +30,7 @@ public class EstadoRepositoryImpl implements EstadoRepository {
 		return manager.find(Estado.class, id);
 	}
 
+	@Transactional
 	@Override
 	public void remover(Estado estado) {
 		manager.remove(estado);

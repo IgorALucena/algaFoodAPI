@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import com.algaworks.algafood.domain.model.Permissao;
 import com.algaworks.algafood.domain.repository.PermissaoRepository;
@@ -18,6 +19,7 @@ public class PermissaoRepositoryImpl implements PermissaoRepository {
 		return manager.createQuery("from permissao", Permissao.class).getResultList();
 	}
 
+	@Transactional
 	@Override
 	public Permissao salvar(Permissao permissao) {
 		return manager.merge(permissao);
@@ -28,6 +30,7 @@ public class PermissaoRepositoryImpl implements PermissaoRepository {
 		return manager.find(Permissao.class, id);
 	}
 
+	@Transactional
 	@Override
 	public void remover(Permissao permissao) {
 		manager.remove(permissao);
