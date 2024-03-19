@@ -29,7 +29,8 @@ public class FormaDePagamentoRepositoryImpl implements FormaDePagamentoRepositor
 
 	@Override
 	public void remover(FormaDePagamento formaDePagamento) {
-		manager.remove(formaDePagamento);
+		FormaDePagamento busca = buscar(formaDePagamento.getId());
+		manager.remove(busca);
 		
 	}
 
