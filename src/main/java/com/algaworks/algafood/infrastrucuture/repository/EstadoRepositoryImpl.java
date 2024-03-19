@@ -6,9 +6,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import org.springframework.stereotype.Repository;
+
 import com.algaworks.algafood.domain.model.Estado;
 import com.algaworks.algafood.domain.repository.EstadoRepository;
 
+@Repository
 public class EstadoRepositoryImpl implements EstadoRepository {
 	
 	@PersistenceContext
@@ -16,7 +19,7 @@ public class EstadoRepositoryImpl implements EstadoRepository {
 
 	@Override
 	public List<Estado> listar() {
-		return manager.createQuery("from estado", Estado.class).getResultList();
+		return manager.createQuery("from Estado", Estado.class).getResultList();
 	}
 
 	@Transactional

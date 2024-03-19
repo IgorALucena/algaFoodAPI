@@ -6,9 +6,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import org.springframework.stereotype.Repository;
+
 import com.algaworks.algafood.domain.model.Permissao;
 import com.algaworks.algafood.domain.repository.PermissaoRepository;
 
+@Repository
 public class PermissaoRepositoryImpl implements PermissaoRepository {
 	
 	@PersistenceContext
@@ -16,7 +19,7 @@ public class PermissaoRepositoryImpl implements PermissaoRepository {
 
 	@Override
 	public List<Permissao> listar() {
-		return manager.createQuery("from permissao", Permissao.class).getResultList();
+		return manager.createQuery("from Permissao", Permissao.class).getResultList();
 	}
 
 	@Transactional

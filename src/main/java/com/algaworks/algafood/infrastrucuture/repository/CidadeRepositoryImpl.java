@@ -20,7 +20,7 @@ public class CidadeRepositoryImpl implements CidadeRepository {
 	
 	@Override
 	public List<Cidade> listar(){
-		return manager.createQuery("from Cozinha", Cidade.class).getResultList();
+		return manager.createQuery("from Cidade", Cidade.class).getResultList();
 	}
 	
 	@Transactional
