@@ -6,9 +6,8 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Permissao {
-
-	private String nome;
-	private String descricao;
+public class Cidade {
 	
+	private String nome;
+
 }
