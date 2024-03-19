@@ -8,6 +8,7 @@ public interface FormaDePagamentoRepository {
 	
 	List<FormaDePagamento> listar();
 	FormaDePagamento salvar(FormaDePagamento formaDePagamento);
+	FormaDePagamento buscar(Long id);
 	void remover(FormaDePagamento formaDePagamento);
 
 }

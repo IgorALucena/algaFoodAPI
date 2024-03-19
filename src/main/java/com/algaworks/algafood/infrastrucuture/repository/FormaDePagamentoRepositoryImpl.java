@@ -32,6 +32,11 @@ public class FormaDePagamentoRepositoryImpl implements FormaDePagamentoRepositor
 		manager.remove(formaDePagamento);
 		
 	}
+
+	@Override
+	public FormaDePagamento buscar(Long id) {
+		return manager.find(FormaDePagamento.class, id);
+	}
 	
 	
 
