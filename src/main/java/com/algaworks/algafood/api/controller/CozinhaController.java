@@ -28,7 +28,7 @@ public class CozinhaController {
 	public ResponseEntity<List<Cozinha>> listar(){//coleção de recursos
 		List<Cozinha> cozinhas = repository.listar();
 		
-		return ResponseEntity.status(HttpStatus.OK).body(cozinhas);
+		return ResponseEntity.ok(cozinhas);
 		
 	}
 	
@@ -39,8 +39,14 @@ public class CozinhaController {
 	}
 	
 	@GetMapping(value = "/{cozinhaId}")// recurso singleton
-	public Cozinha buscar(@PathVariable("cozinhaId") Long id) {
-		return repository.buscar(id);
+	public ResponseEntity<Cozinha> buscar(@PathVariable("cozinhaId") Long id) {
+		Cozinha cozinha = repository.buscar(id);
+		
+		if(id != null) {
+			return ResponseEntity.ok(cozinha);
+		}
+		
+		return ResponseEntity.notFound().build();
 	}
 
 }
