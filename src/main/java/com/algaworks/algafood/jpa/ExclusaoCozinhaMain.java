@@ -1,4 +1,4 @@
-package com.algaworks.algafood.jpa;
+/* package com.algaworks.algafood.jpa;
 
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -24,4 +24,4 @@ public class ExclusaoCozinhaMain {
 		
 	}
 
-}
+} */

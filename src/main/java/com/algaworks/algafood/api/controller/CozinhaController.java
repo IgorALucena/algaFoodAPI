@@ -33,6 +33,7 @@ public class CozinhaController {
 	
 	private CozinhaRepository repository;
 	
+	@Autowired
 	private CadastroCozinhaService cadastroCozinha;
 	
 	@GetMapping
@@ -75,7 +76,7 @@ public class CozinhaController {
 			
 			BeanUtils.copyProperties(cozinha, cozinhaAtual, "id");
 			
-			repository.salvar(cozinhaAtual);
+			cadastroCozinha.salvar(cozinhaAtual);
 			return ResponseEntity.ok(cozinhaAtual);
 			
 		}
