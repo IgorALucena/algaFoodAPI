@@ -1,4 +1,5 @@
-/* package com.algaworks.algafood.jpa;
+/* EXEMPLO DE UTILIZAÇÃO JPA PURO
+ * package com.algaworks.algafood.jpa;
 
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;

@@ -1,4 +1,6 @@
-package com.algaworks.algafood.infrastrucuture.repository;
+/* 	PERSISTÊNCIA VIA ENTITYMANAGER, SEM SPRING DATA
+ * 
+ * package com.algaworks.algafood.infrastrucuture.repository;
 
 import java.util.List;
 
@@ -48,5 +50,12 @@ public class CozinhaRepositoryImpl implements CozinhaRepository {
 		manager.remove(cozinha);
 	}
 
+	@Override
+	public List<Cozinha> consultaPorNome(String nome) { // Consulta JPQL
+		return manager.createQuery("from Cozinha where nome like :nome", Cozinha.class)
+				.setParameter("nome", "%" + nome + "%")
+				.getResultList();
+	}
 
-}
+
+}*/

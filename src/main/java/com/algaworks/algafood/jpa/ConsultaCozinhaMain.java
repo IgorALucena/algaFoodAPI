@@ -1,4 +1,5 @@
-package com.algaworks.algafood.jpa;
+/* EXEMPLO DE UTILIZAÇÃO JPA PURO
+
 
 import java.util.List;
 
@@ -24,3 +25,4 @@ public class ConsultaCozinhaMain {
 	}
 
 }
+*/
