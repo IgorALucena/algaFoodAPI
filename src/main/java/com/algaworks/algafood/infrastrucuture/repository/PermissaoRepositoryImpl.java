@@ -1,4 +1,4 @@
-package com.algaworks.algafood.infrastrucuture.repository;
+/*package com.algaworks.algafood.infrastrucuture.repository;
 
 import java.util.List;
 
@@ -40,4 +40,4 @@ public class PermissaoRepositoryImpl implements PermissaoRepository {
 		
 	}
 
-}
+}*/

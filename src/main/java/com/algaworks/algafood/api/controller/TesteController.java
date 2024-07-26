@@ -1,8 +1,7 @@
-/* CONSULTA POR NOME COM JPQL, SEM SPRING DATA
- * package com.algaworks.algafood.api.controller;
+package com.algaworks.algafood.api.controller;
  
-
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,14 +14,27 @@ import com.algaworks.algafood.domain.repository.CozinhaRepository;
 
 @RestController
 @RequestMapping("/teste")
-public class TesteController { //Controller de teste para consulta JPQL
+public class TesteController {
 
 	@Autowired
 	private CozinhaRepository cozinhaRepository;
 	
+	//CONSULTA POR JPQL SEM SPRING DATA
+	/*
 	@GetMapping("/cozinhas/por-nome")
 	public List<Cozinha> cozinhasPorNome(@RequestParam("nome") String nome) {
 		return cozinhaRepository.consultaPorNome(nome);
+	}*/
+	
+	//CONSULTA COM SPRING DATA
+	@GetMapping("/cozinhas/por-nome")
+	public List<Cozinha> cozinhasPorNome(@RequestParam("nome") String nome) {
+		return cozinhaRepository.findTodasByNome(nome);
 	}
 	
-}*/
+	@GetMapping("/cozinhas/unica-por-nome")
+	public Optional<Cozinha> cozinhaPorNome(String nome) {
+		return cozinhaRepository.findByNome(nome);
+	}
+	
+}

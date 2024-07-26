@@ -1,4 +1,5 @@
-package com.algaworks.algafood.infrastrucuture.repository;
+/* PERSISTÊNCIA VIA ENTITYMANAGER, SEM SPRING DATA
+ * package com.algaworks.algafood.infrastrucuture.repository;
 
 import java.util.List;
 
@@ -48,4 +49,4 @@ public class CidadeRepositoryImpl implements CidadeRepository {
 		manager.remove(cidade);
 	}
 
-}
+}*/
