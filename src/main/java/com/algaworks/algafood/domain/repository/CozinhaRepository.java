@@ -19,7 +19,11 @@ public interface CozinhaRepository extends JpaRepository<Cozinha, Long> {
 	 * atribuir o nome da assinatura do método igual a propriedade pela qual eu
 	 * quero buscar o registro no banco. Ou posso adicionar prefixos reconhecidos
 	 * pelo spring, como findBy<nome_da_propriedade>. Find e by são prefixos e entre
-	 * um e outro posso adicionar o que eu desejar
+	 * um e outro posso adicionar o que eu desejar. CONSULTAR: https://docs.spring.io/spring-data/jpa/docs/1.4.3.RELEASE/reference/html/repository-query-keywords.html
+	 * 
+	 * PREFIXOS: find, query, get, exists, count...
+	 * FLAGS: First, Top2...
+	 * KEYWORDS: containing...
 	 * 
 	 * ex: List<Cozinha> nome(String nome);
 	 * 
@@ -38,6 +42,9 @@ public interface CozinhaRepository extends JpaRepository<Cozinha, Long> {
 
 	// ASSINATURA DE MÉTODOS IMPLEMENTADOS PELO SPRING DATA
 	List<Cozinha> findTodasByNome(String nome);
+	
+	//OBS: busca com LIKE. Containing é uma keyword que proporciona o percent
+	List<Cozinha> findTodasByNomeContaining(String nome);
 	
 	Optional<Cozinha> findByNome(String nome);
 
